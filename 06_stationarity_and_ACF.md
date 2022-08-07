@@ -4,7 +4,6 @@
 - No periodic fluctuations 
 즉, 특정 구간의 데이터의 특징이 다른 구간의 데이터의 특징과 매우 유사해야함 
 
-
 ★ Non-stationary time series data는 stationary time seires로 변환해줘야 함 (transformation)
 
 # AutoCovariance Function (ACF)
@@ -16,10 +15,9 @@ $$X_1, X_2, X_3,... \ : \ X_t \sim distribusion(\mu_t, \sigma_t^2)$$
   - 시간의 진행에 대해 확률적인 변화를 가지는 구조. 즉, 각각의 timestep에서 어떤 확률변수 값을 갖을지 모름
   - VS deterministic processes
 
+=> ***★시계열을 '확률 과정'이라고 볼 수 있다!!★***
 
-=> ★시계열을 '확률 과정'이라고 볼 수 있다!!★
 
----
 ## [ Autocovariance function (자기상관함수) ]
 - 시차에 따른 일련의 자기상관
 - 정상 시계열(stationary times series)에서는 자기상관성이 없고 특정 구간의 특성이 반복됨. <br>
@@ -29,6 +27,7 @@ $$X_1, X_2, X_3,... \ : \ X_t \sim distribusion(\mu_t, \sigma_t^2)$$
 
 
 - **ACF** :
-$$\gamma (s,t)=Cov(X_s,X_t)=E[(X_s-\mu_s)(X_t-\mu_t)] \\ \gamma (t,t)=E[(X_t-\mu_t)^2]=Var(X_t)=\sigma_t^2$$
+$$\gamma (s,t)=Cov(X_s,X_t)=E[(X_s-\mu_s)(X_t-\mu_t)]$$
+$$\gamma (t,t)=E[(X_t-\mu_t)^2]=Var(X_t)=\sigma_t^2$$
 - **Autocovariance coefficient** : 
 $$\gamma_k=\gamma(t,t+k) \approx c_k $$
