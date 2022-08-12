@@ -24,19 +24,23 @@ $$X_1, X_2, X_3,... \ : \ X_t \sim distribusion(\mu_t, \sigma_t^2)$$
 - 만약, 어제의 데이터가 오늘에 영향을 미치치 않고 오늘의 데이터가 내일에 영향을 미치지 않는 **독립**이라면, **자기상관함수의 값은 0**
 - Autocovariance coefficients at different lags : 
 $$\gamma_k=\gamma(t,t+k)=Cov(X_t, X_{t+k})=E[(X_t-\mu)(X_{t+l}-\mu)]$$ 
-- $c_k$는 $\gamma_k$의 estimator(추정량) : $\gamma_k \approx c_k $
+- Estimation of autocovariance coefficient at lag k: <br>
+  ( $\gamma_k \approx c_k $ )
 <img src="https://user-images.githubusercontent.com/96452587/184349324-6ec5a305-d0c9-4245-8d80-cb35d0497431.png" width="187" height="40">
 
 - R 명령어 : acf(*time series*, type=*'covariance'*)
 
 
-- ?정상 시계열에서는 ACF 그래프가 빠르게 0에 수렴하고 비정상 시계열에서는 천천히 감소함
-- ?timestep k는 Autocovariance coefficient를 의미함 
-
-
 ## [ Autocorrelation function(자기상관계수) ]
 - 의미상으로는 Autocovariance를 노멀라이즈 한 것
 - Autocorrelation coefficient between $𝑋_𝑡$ and $𝑋_{𝑡+𝑘}$:
-- $$-1 \leq \ro_k=\frac{\gamma_k}{\gamma_0} \leq 1$$
+$$-1 \leq \rho_k=\frac{\gamma_k}{\gamma_0} \leq 1$$
+- Estimation of autocorrelation coefficient at lag k: <br>
+  ( $\rho_k \approx r_k = \frac{c_k}{c_0}$ )
+<img src="https://user-images.githubusercontent.com/96452587/184384877-b8847dbd-dc59-463a-8a9a-6dd1b6bc20cc.png" width="196" height="45">
+
+- Correlogram(코렐로그램; 상관도표) : plotting autocorelation coefficient at different lags 
+- R 명령어 : acf(*time series*, type=*'covariance'*)
+  - timestep 0에서의 값은 항상 1 ( $r_0=\frac{c_0}{c_0}=1$ )  
 
 
