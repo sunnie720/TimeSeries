@@ -20,15 +20,23 @@ $$X_1, X_2, X_3,... \ : \ X_t \sim distribusion(\mu_t, \sigma_t^2)$$
 
 ## [ Autocovariance function (자기상관함수) ]
 - 시차에 따른 일련의 자기상관
-- 정상 시계열(stationary times series)에서는 자기상관성이 없고 특정 구간의 특성이 반복됨. <br>
-  즉, 특정 구간의 길이 timestep 'k'만큼 이동할 때마다 같은 특성이 나타남 
-- 정상 시계열에서는 ACF 그래프가 빠르게 0에 수렴하고 비정상 시계열에서는 천천히 감소함
-- timestep k는 Autocovariance coefficient를 의미함 
+- 자기 자신 $(X_t)$ 과 특정 간격(timestep k)만큼 이동시킨 자기자신 $(X_{t+k})$ 과의 공분산 (시간 이동=시차=time lag)
+- 만약, 어제의 데이터가 오늘에 영향을 미치치 않고 오늘의 데이터가 내일에 영향을 미치지 않는 **독립**이라면, **자기상관함수의 값은 0**
+- Autocovariance coefficients at different lags : 
+$$\gamma_k=\gamma(t,t+k)=Cov(X_t, X_{t+k})=E[(X_t-\mu)(X_{t+l}-\mu)]$$ 
+- $c_k$는 $\gamma_k$의 estimator(추정량) : $\gamma_k \approx c_k $
+<img src="https://user-images.githubusercontent.com/96452587/184349324-6ec5a305-d0c9-4245-8d80-cb35d0497431.png" width="187" height="40">
+
+- R 명령어 : acf(*time series*, type=*'covariance'*)
 
 
-- **ACF** :
-$$\gamma (s,t)=Cov(X_s,X_t)=E[(X_s-\mu_s)(X_t-\mu_t)]$$
-$$\gamma (t,t)=E[(X_t-\mu_t)^2]=Var(X_t)=\sigma_t^2$$
-- **Autocovariance coefficient** : 
-$$\gamma_k=\gamma(t,t+k) \approx c_k $$
-* $c_k$는 $\gamma_k$의 estimation(추정)
+- ?정상 시계열에서는 ACF 그래프가 빠르게 0에 수렴하고 비정상 시계열에서는 천천히 감소함
+- ?timestep k는 Autocovariance coefficient를 의미함 
+
+
+## [ Autocorrelation function(자기상관계수) ]
+- 의미상으로는 Autocovariance를 노멀라이즈 한 것
+- Autocorrelation coefficient between $𝑋_𝑡$ and $𝑋_{𝑡+𝑘}$:
+- $$-1 \leq \ro_k=\frac{\gamma_k}{\gamma_0} \leq 1$$
+
+
