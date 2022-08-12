@@ -31,3 +31,4 @@ $$\gamma (s,t)=Cov(X_s,X_t)=E[(X_s-\mu_s)(X_t-\mu_t)]$$
 $$\gamma (t,t)=E[(X_t-\mu_t)^2]=Var(X_t)=\sigma_t^2$$
 - **Autocovariance coefficient** : 
 $$\gamma_k=\gamma(t,t+k) \approx c_k $$
+*$c_k$는 $\gamma_k$의 estimation(추정)
